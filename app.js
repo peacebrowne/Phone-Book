@@ -170,11 +170,11 @@ const mobile_contact_info = target =>{
  * 
  */
 const add_contact = data =>{
-
     let contact = {};
 
     for(datum of data){
-        if (datum.value === '') return;
+        if(datum.name != 'email' && datum.value === '')return
+        // if (datum.value === '') return;
         contact[datum.name] = datum.value
     }
     contact['id'] = number;
@@ -225,7 +225,7 @@ const edit_contact = data =>{
     let target_contact = {};
 
     for(datum of data){
-        if (datum.value === '') return;
+        if (datum.name != 'email' && datum.value === '') return;
         target_contact[datum.name] = datum.value
     }
     target_contact['id'] = id;
