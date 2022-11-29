@@ -9,29 +9,6 @@ const delete_form = document.querySelector('.delete-contact')
 const add_form = document.querySelector('.contact-form')
 
 let transaction,target;
-
-// Phone book => array of contacts
-// let phoneBook = [
-//     {
-//         id: 1,
-//         name:'peace browne',
-//         contact:"0770237596",
-//         email:'eman@gmail.com'
-//     },
-//     {
-//         id: 2,
-//         name:'badio kyne',
-//         contact:"0770237596",
-//         email:'eman@gmail.com'
-//     },
-//     {
-//         id: 3,
-//         name:'victoria doe',
-//         contact:"0770237596",
-//         email:'eman@gmail.com'
-//     }
-
-// ];
 let phoneBook = [];
 
 // Handling all click events.
@@ -325,13 +302,22 @@ const search_contact = ev => {
 
         if(text.includes(char)){
 
-            if(element.className.includes('desktop-row') || element.className.includes('contact-row')){
+            if(element.className.includes('desktop-row')){
                 
                 element.style.display = 'table-row'
             }
 
-        }else{
-            element.style.display = 'none'
+            if(element.parentElement.className.includes('mobile-row')){
+                element.parentElement.style.display = 'table-row-group'
+            }
+
+        }
+        else{
+            if(element.parentElement.className.includes('mobile-row')){
+                element.parentElement.style.display = 'none'
+            }else{
+                element.style.display = 'none'
+            }
         }
 
     })
