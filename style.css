@@ -28,8 +28,8 @@
     --danger: #dc3545;
     --light: #f8f9fa;
     --dark: #343a40;
-    --black: #000000
-
+    --black: #000000;
+    --transparent: #000000d8;
 }
 
 .banner{
@@ -39,7 +39,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
     background-color: var(--white);
 }
 
@@ -83,7 +83,6 @@
 
 main{
     width: 100%;
-    height: 100vh;
 }
 
 header{
@@ -108,30 +107,84 @@ header h1{
 .right-side-header{
     display: flex;
    padding: 0.5rem;
+   width: 50%;
 }
 
 .search{
-    padding: 0.2rem 0.5rem;
+    padding: 0.5rem 0.9rem;
     outline: none;
+    width: 100%;
+    border-radius: 1rem;
+    border: none;
 }
 
-section{
-    width: 100%;
-    height: 78vh;
-    margin: 10px auto;
+.contact-list{
+    height: 80vh;
+    margin: 0 auto;
     overflow: scroll;
     display: flex;
     flex-direction: column;
+    padding: 2rem 4rem;
 }
-/* .contact-table{
-    height: 50vh;
-} */
 
-.add-contact{
+.contact-item{
+    display: flex;
+    place-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-photo{
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.contact-info{
+    margin: 0 1rem;
+}
+
+.contact-info h5{
+    color: var(--black);
+}
+.contact-info h6{
+    font-weight: 400;
+    color: var(--dark);
+}
+
+.contact-action{
+    padding: 1rem;
+    margin-left: auto;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.contact-action:hover .contact-action-menu{
+    display: block;
+}
+
+.contact-action-menu{
+    width: 150px;
+    position: absolute;
+    padding: 1rem;
+    background-color: white;
+    top: 2.5rem;
+    right: 0;
+    box-shadow: 0 2px 3px 0 rgba(60,64,67,.3),0 6px 10px 4px rgba(60,64,67,.15);
+    z-index: 1;
+    display: none;
+}
+
+.contact-action-menu i{
+    margin-right: 0.1rem;
+}
+
+.add-contact-btn{
     width: 55px;
     height: 55px;
-    background-color: var(--green);
-    box-shadow: 1px 1px 3px var(--dark);
+    background-color: var(--black);
+    box-shadow: 0 2px 3px 0 rgba(60,64,67,.3),0 6px 10px 4px rgba(60,64,67,.15);
     position: absolute;
     bottom: 20px;
     right: 3rem;
@@ -140,178 +193,97 @@ section{
     color: white;
     border: none;
     cursor: pointer;
+    z-index: 1;
 }
 
-.add-contact:hover{
+.add-contact-btn:hover{
     background-color: var(--teal);
 }
 
+.hidden{
+    display: none !important;
+}
+
 .popup-banner{
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     height: 100vh;
     position: absolute;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.717);
-}
-
-span{
-    font-size: 3rem;
-}
-
-#cancel-form-icon{
-    width: 20rem;
-    /* padding-bottom: 0.1rem; */
-    text-align: right;
-    font-size: large;
-    color: var(--white);
-    cursor: pointer;;
-}
-
-
-
-#edit-form{
-    display: none;
-}
-
-form{
-    width: 20rem;
-    padding: 1rem 2rem;
-    flex-direction: column;
     background-color: var(--white);
+    z-index: 5;
 }
 
-form h1{
-    padding-bottom: 1rem;
-    font-weight: 400;
+.popup-form{
+    width: 65%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
 }
 
-form h1::first-letter{
-    font-size: 3rem;
-    font-weight: 700;
+.cancel-form{
+    width: 100%;
+    padding: 1rem;
+    text-align: right;
+    font-size: 2rem;
+    color: var(--black);
+    cursor: pointer;
 }
 
-form p{
-    font-size: small;
-    text-align: center;
-    color: rgb(41, 40, 40);
+.form-group{
+    padding: 0.1rem;
+    margin: 0.4rem 0;
 }
 
+.form-group img{
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+}
 
-form input{
-    margin: 0.3em 0px;
-    padding: 0.7rem;
-    background-color: lightgrey;
+.form-group input{
     border: none;
+    border-bottom: 1px solid var(--gray);
+    padding: 0.5rem;
+    width: 100%;
     outline: none;
 }
 
-form input:focus{
-    outline: 0.1rem solid var(--green);
-}
-
-form button{
-    padding: 0.5rem 0.7rem;
-    background-color: var(--black);
-    border: none;
-    color: var(--white);
-    cursor: pointer;
-    border: 2px solid var(--black);
-    font-weight: 700;
-    margin: 0.3em 0px;
-    text-align: left;
-}
-
-.deskop-view table thead{
-    background-color: var(--green);
-    color: white;
-}
-
-.edit-btn{
-    padding: 0.2rem 0.3rem;
-    background-color: #fd7e14;
-    border: none;
-    color: var(--white);
-    cursor: pointer;
-    text-transform: capitalize;
-}
-
-.delete-btn{
-    padding: 0.2rem 0.3rem;
-    background-color: var(--red);
-    border: none;
-    color: var(--white);
-    cursor: pointer;
-    text-transform: capitalize;
-}
-
-.display-flex{
-    display: flex !important;
-}
-
-.display-block{
-    display: block;
-}
-
-.display-none{
-    display: none;
-}
-
-.delete-contact,.contact-form{
-    display: none ;
-}
-.warning-message{
+.upload-photo {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    background: #c2e7ff;
     display: flex;
-}
-.warning-message span {
-    width: 50px;
-    height: 50px;
-    font-size: 4rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    border-radius: 50%;
+    margin-top: -3rem;
+    margin-bottom: 2rem;
+  }
+  
+  .upload-photo i {
+    cursor: pointer;
+    margin: auto;
+    font-size: 1.5rem;
+  }
+  
+  .upload-photo input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+  
+  .upload-photo:hover input[type="file"],
+  .upload-photo:focus input[type="file"] {
+    outline: none;
+  }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 90%;
-    margin: 0 auto;
-}
-
-td, th {
-border-top: 1px solid #dddddd;
-text-align: left;
-padding: 8px;
-}
-
-.opt{
-    text-align: center;
-}
-
-.name{
-    text-transform: capitalize;
-}
-
-.mobile-list-head {
-    background-color: var(--green);
-    color: var(--white);
-}
-
-.mobile-list-head th{
-    border: none;
-}
-
-.mobile-list{
-    background-color: #dddddd;
-    display: none;
-}
-
-.mobile-list-on{
-    display: table-row;
+.contact-form{
+    padding: 1rem;
+    width: 100%;
 }
 
 li{
@@ -319,10 +291,25 @@ li{
     padding: 0.1rem 0px;
 }
 
-.mobile-view{
-    display: none;
-}
+textarea{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0.7rem;
+    border-bottom: 1px solid var(--gray);
+ }
 
+.save-btn{
+    width: 100%;
+    padding: 0.7rem 4rem;
+    background-color: var(--black);
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    border: 1px solid var(--black);
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
 
 @media only screen and (min-width: 426px) and (max-width: 767px){
     .mobile-btn{
@@ -354,19 +341,21 @@ li{
         padding-left: 0.4rem;
 
     }
+
+    section{
+        padding: 2rem 1rem;
+    }
+
+    .popup-form{
+        width: 90%;
+    }
+
 }
 
 @media only screen and (max-width: 425px){
 
     .banner{
         justify-content: flex-start;
-    }
-
-    .desktop_form{
-        display: none;
-    }
-    .mobile-add-btn{
-        display: block;
     }
 
     .wrapper {
@@ -404,21 +393,17 @@ li{
 
     }
 
-    .deskop-view{
-        display: none;
+    .popup-form{
+        width: 100%;
     }
 
-    .mobile-view{
-        height: 80vh;
-        display: block;
-        overflow-y: scroll;
+    .contact-list{
+        padding: 1rem 1rem;
+        height: 70vh;
+    }
 
-    }
-    #cancel-form-icon,form{
-        width: 18rem;
-    }
-    section{
-        height: 77vh;
+    .form-group{
+        width: 100%;
     }
     
 }

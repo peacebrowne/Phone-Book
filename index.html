@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./fontawesome-free-6.2.1-web/css/all.min.css">
     <title>PhoneBook</title>
 </head>
 <body>
@@ -18,102 +19,44 @@
             </div>
     </div>
 
-    <div class="popup-banner">
-        <div id="cancel-form-icon">
-            <!-- <i class="fa fa-times cancel-form"></i> -->
-            <span class="cancel-form">&#215;</span>
-        </div>
-        <form action="" class="contact-form">
-            <h1>Contact Form</h1>
-            <input type="text" name="name" placeholder="Name..." required>
-            <input type="tel" name="contact" placeholder="Contact..." required>
-            <input type="email" name="email" placeholder="Email...">
-            <button class="save-btn">Save</button>
-            <p>Lorem ipsum, dolor sit amet con</p>
-        </form>
+    <div class="popup-banner hidden">
+        
+        <section class="popup-form">
+            <div class="cancel-form">
+                <span class="exit-form">&#215;</span>
+            </div>
 
-        <form class="delete-contact">
-            <div class="warning-message">
-                <!-- <i class="fa fa-question"></i> -->
-                <span>&#x3F;</span>
-                <h4>Do you want to Delete this Contact ?</h4>
-            </div>
-            <div class="delete-btns">
-                <button class="yes-btn">Yes</button>
-                <button class="cancel-form">No</button>
-            </div>
-        </form>
+           <form action="" class="contact-form">
+            
+           </form>
+
+        </section>
+
     </div>
 
-    <button class="add-contact">&#43;</button>
+    <button class="add-contact-btn">&#43;</button>
+
+    <!-- header section -->
+    <header>
+        <div class="left-side-header">
+            <img src="./img/download (7).png" alt="">
+            <h1>PhoneBook</h1>
+        </div>
+        <div class="right-side-header">
+            <input type="search" class="search" placeholder="Search contacts...">
+        </div>
+    </header>
 
     <!-- main page -->
     <main>
 
-        <!-- header section -->
-        <header>
-            <div class="left-side-header">
-                <img src="./img/download (7).png" alt="">
-                <h1>PhoneBook</h1>
-            </div>
-            <div class="right-side-header">
-                <!-- desktop and tablet search field -->
-                <input type="search" class="search" placeholder="Search contacts...">
-            </div>
-        </header>
-
-        <section class="display">
-
-            <div class="contact-table">
-
-                <!-- desktop and tablet view -->
-                <div class="deskop-view">
-
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Name</th>
-                                <th>Phone No</th>
-                                <th>Email</th>
-                                <th>Edit</th>
-                              <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colspan="6"><div  class="pagination"></div></td>
-                            </tr>
-                        </tfoot>
-                    </table> 
-                </div>
-            
-                <!-- mobile view -->
-                <div class="mobile-view">
-                    <table>
-                        <thead>
-                            <tr class="mobile-list-head">
-                                <th>#</th>
-                                <th>Name</th>
-                                <th class="opt">Opt</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-
-            </div>
+        <section class="contact-list">
+            <ul>
+               
+            </ul>
         </section>
 
-       
-
-
     </main>
-
-    
-
     <script src="app.js"></script>
 </body>
 </html>
