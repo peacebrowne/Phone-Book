@@ -63,10 +63,10 @@ const open_phoneBook = target => {
 let photo = ''
 let id;
 
-function upload_photo(ele) {
+function upload_photo(file) {
 
-    const element = ele;
-    const selectedFiles = ele.files;
+    const element = file;
+    const selectedFiles = file.files;
     const reader = new FileReader();
   
     reader.onload = function(event) {
@@ -80,11 +80,6 @@ function upload_photo(ele) {
     reader.readAsDataURL(selectedFiles[0]);
   }
   
-  
-
-
-// photoEl.addEventListener('change',upload_photo)
-
 function form_validation() {
 
     const inputs = find_element('form').querySelectorAll('input')
