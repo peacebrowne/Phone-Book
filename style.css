@@ -129,7 +129,7 @@ header h1{
 
 .contact-item{
     display: flex;
-    place-items: center;
+    place-items: center;    
     padding: 0.5rem;
     margin-bottom: 0.5rem;
 }

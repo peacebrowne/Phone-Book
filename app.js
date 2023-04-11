@@ -63,14 +63,25 @@ const open_phoneBook = target => {
 let photo = ''
 let id;
 
-const upload_photo = event =>{
+function upload_photo(ele) {
 
-    const element = event;
-    const photo_path = URL.createObjectURL(element.files[0])
-    element.closest('.upload-photo').nextElementSibling.innerHTML = `<img src="${photo_path}" alt="">`
-    photo = photo_path;
+    const element = ele;
+    const selectedFiles = ele.files;
+    const reader = new FileReader();
+  
+    reader.onload = function(event) {
+  
+        const photo_path = event.target.result
+        element.closest('.upload-photo').nextElementSibling.innerHTML = `<img src="${photo_path}" alt="">`
+        photo = photo_path;
+        
+    };
+  
+    reader.readAsDataURL(selectedFiles[0]);
+  }
+  
+  
 
-}
 
 // photoEl.addEventListener('change',upload_photo)
 
