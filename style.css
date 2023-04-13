@@ -118,6 +118,16 @@ header h1{
     border: none;
 }
 
+.contact{
+    display: flex;
+    margin: auto;
+}
+
+.contact h5{
+    margin: 0 0.5rem;
+    font-weight: 200;
+}
+
 .contact-list{
     height: 80vh;
     margin: 0 auto;
@@ -311,8 +321,16 @@ textarea{
     border-radius: 1rem;
 }
 
+.wrongNumber{
+    outline: 1px solid var(--danger) !important;
+}
+
 @media only screen and (min-width: 426px) and (max-width: 767px){
     .mobile-btn{
+        display: none;
+    }
+
+    .contact{
         display: none;
     }
    
